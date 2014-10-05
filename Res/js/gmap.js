@@ -25,8 +25,8 @@ function success(position) {
    var markericon = "Res/img/marker_4.png"; 
    var mapCanvas = document.getElementById('gmap');
    myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  
-   directionsDisplay = new google.maps.DirectionsRenderer();
+   var rendererOptions = { draggable: true };
+   directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
     var mapOptions = {
         mapTypeControlOptions: {
             mapTypeIds: ['Styled']
@@ -41,7 +41,7 @@ function success(position) {
         mapTypeId: 'Styled'
     }
     map = new google.maps.Map(mapCanvas, mapOptions);
-    var styledMapType = new google.maps.StyledMapType(styleGreen, { name: 'Styled' });
+    var styledMapType = new google.maps.StyledMapType(styleCobalt, { name: 'Styled' });
     map.mapTypes.set('Styled', styledMapType);
 
     var marker = new google.maps.Marker({
@@ -120,6 +120,7 @@ function calcRoute(startaddr, destaddr, depdate) {
                     var request = {
                         origin: originLatLng,
                         destination: destinationLatLng,
+                        unitSystem: google.maps.UnitSystem.IMPERIAL,
                         transitOptions: 
                         {
                             departureTime: new Date(depdate)

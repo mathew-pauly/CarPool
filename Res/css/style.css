@@ -23,7 +23,7 @@ html,body,div,input,section
 .overlay
 {
     background-color:Green;
-    opacity:0.3;
+    opacity:0;
 }
 
 #nav 
@@ -37,10 +37,10 @@ html,body,div,input,section
 
 #nav span
 {
-    color:#006e2e;
+    color:gray;
     font-size:48px;
     font-family:CooperBlackB!important;
-    text-shadow:2px 2px 2px #a9db80;
+    text-shadow:2px 2px 2px #000;
   
     word-wrap: break-word;
 }
