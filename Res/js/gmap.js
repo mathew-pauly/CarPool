@@ -4,7 +4,9 @@ var styleGreen = [{ "featureType": "water", "elementType": "geometry", "stylers"
 var styleCobalt = [{ "featureType": "all", "elementType": "all", "stylers": [{ "invert_lightness": true }, { "saturation": 10 }, { "lightness": 30 }, { "gamma": 0.5 }, { "hue": "#435158"}]}];
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
-
+var myLatlng;
+var map;
+var markers = [];
 function initialize() {
     if (navigator.geolocation) {
         // Call getCurrentPosition with success and failure callbacks
@@ -20,9 +22,9 @@ function initialize() {
 
 function success(position) {
 
-   var markericon = "Res/img/marker_2.png"; 
+   var markericon = "Res/img/marker_3.png"; 
    var mapCanvas = document.getElementById('gmap');
-   var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+   myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   
    directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
@@ -31,13 +33,14 @@ function success(position) {
         },
         center: myLatlng,
         zoom: 15,
+        draggable: false,
         panControl: false,
         zoomControl: false,
         scaleControl: false,
         streetViewControl: false,
         mapTypeId: 'Styled'
     }
-    var map = new google.maps.Map(mapCanvas, mapOptions);
+    map = new google.maps.Map(mapCanvas, mapOptions);
     var styledMapType = new google.maps.StyledMapType(styleGreen, { name: 'Styled' });
     map.mapTypes.set('Styled', styledMapType);
 
@@ -47,6 +50,7 @@ function success(position) {
         title: 'Me',
         icon: markericon
     });
+    markers.push(marker);
     directionsDisplay.setMap(map);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -67,6 +71,30 @@ function fail(error) {
             break;
     }
 }
+
+function setAllMap(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function UpdateMyPosition() {
+    map.setCenter(markers[0].position);
+
+}
+
+function clearMarkers() {
+    setAllMap(null);
+
+}
+
+
+// Shows any markers currently in the array.
+function showMarkers() {
+    setAllMap(map);
+}
+
 
 function calcRoute(startaddr, destaddr, depdate) {
     var originLatLng;

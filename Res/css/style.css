@@ -1,5 +1,7 @@
 ﻿@font-face {font-family:CooperBlackB; src:url('http://localhost:1122/CarPool/Res/COPRGTB.ttf');}
 @font-face {font-family:CooperBlackB; src:url('http://localhost:1122/CarPool/Res/COPRGTB.eot');}
+
+
 html,body,div,input,section
 {
     margin:0;
@@ -15,11 +17,12 @@ html,body,div,input,section
     left:0;
     top:0;
     z-index:-1;
-    background-color:Green; /* Old browsers */
+    background-color:White; /* Old browsers */
 }
 
 .overlay
 {
+    background-color:Green;
     opacity:0.3;
 }
 
@@ -38,7 +41,7 @@ html,body,div,input,section
     font-size:48px;
     font-family:CooperBlackB!important;
     text-shadow:2px 2px 2px #a9db80;
-    padding-left:10%;  
+  
     word-wrap: break-word;
 }
 
@@ -51,16 +54,16 @@ html,body,div,input,section
 
 .ctrl-bg
 {
-    background: rgba(255, 255, 255, 0.4)  no-repeat scroll 16px 16px; 
+    background: rgba(255, 255, 255, 0.1)  no-repeat scroll 16px 16px; 
     -webkit-border-radius: 4px;
     border-radius: 4px;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box; 
     font-family: 'Source Sans Pro', sans-serif;
-    font-size:18px;
-    color:#006e2e;
-  
+    font-size:24px;
+    color:white;
+  text-transform: uppercase;
 }
 
 .btn
@@ -95,5 +98,27 @@ html,body,div,input,section
 
 .orange
 {
-   color:Orange; 
+   color:white; 
+}
+
+
+
+#myloc
+{
+    height:50px;width:50px;
+     margin-left:10%;  
+     margin-bottom:25px;
+}
+
+::-webkit-input-placeholder {
+    color:    rgb(51,153,15)!important;
+}
+:-moz-placeholder {
+    color:     yellow!important;
+}
+::-moz-placeholder {
+   color:     yellow!important;
+}
+:-ms-input-placeholder {
+ color:     yellow!important;
 }

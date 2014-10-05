@@ -12,6 +12,10 @@ $(document).ready(function () {
 
     $container.height(windowHeight);
 
+    var $ficon = $("#fromaddr").prev();
+    $("#fromaddr").height($ficon.height());
+    $("#toaddr").height($ficon.height());
+
     $(window).resize(function () {
         windowWidth = $(window).width(); //retrieve current window width
         windowHeight = $(window).height(); //retrieve current window height
@@ -24,6 +28,10 @@ $(document).ready(function () {
 
     $('#date').datepicker({
         format: "dd/mm/yyyy"
+    });
+
+    $('#myloc').on("click", function () {
+        UpdateMyPosition();
     });
 
     $("#submit").on("click", function () {
