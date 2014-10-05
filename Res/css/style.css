@@ -1,0 +1,99 @@
+﻿@font-face {font-family:CooperBlackB; src:url('http://localhost:1122/CarPool/Res/COPRGTB.ttf');}
+@font-face {font-family:CooperBlackB; src:url('http://localhost:1122/CarPool/Res/COPRGTB.eot');}
+html,body,div,input,section
+{
+    margin:0;
+    border:0;
+    padding:0; 
+    display:block;
+}
+.full-screen
+{
+    position:fixed;
+    z-index:0;
+    width:100%;
+    left:0;
+    top:0;
+    z-index:-1;
+    background-color:Green; /* Old browsers */
+}
+
+.overlay
+{
+    opacity:0.3;
+}
+
+#nav 
+{
+    width:100%;
+    height:60px;
+    z-index:1;  
+    padding-top:15px;  
+    font-family:CooperBlackB!important;
+}
+
+#nav span
+{
+    color:#006e2e;
+    font-size:48px;
+    font-family:CooperBlackB!important;
+    text-shadow:2px 2px 2px #a9db80;
+    padding-left:10%;  
+    word-wrap: break-word;
+}
+
+#container
+{
+    position:absolute;
+    top:0; 
+    width:100%;
+}
+
+.ctrl-bg
+{
+    background: rgba(255, 255, 255, 0.4)  no-repeat scroll 16px 16px; 
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#006e2e;
+  
+}
+
+.btn
+{
+  
+   height:60px!important;
+}
+.btn:hover
+{
+   background: rgba(255, 255, 255, 0.4)  no-repeat scroll 16px 16px; 
+}
+
+.btn:focus
+{
+    background: rgba(255, 255, 255, 0.4)  no-repeat scroll 16px 16px; 
+}
+    
+.red
+{
+    color:Maroon;
+}
+
+.green
+{
+ color:#006e2e;   
+}
+
+.white
+{
+    color:white;   
+}
+
+.orange
+{
+   color:Orange; 
+}
