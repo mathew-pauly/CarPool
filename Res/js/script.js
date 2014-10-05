@@ -15,6 +15,7 @@ $(document).ready(function () {
     var $ficon = $("#fromaddr").prev();
     $("#fromaddr").height($ficon.height());
     $("#toaddr").height($ficon.height());
+    $("#date").height($ficon.height());
 
     $(window).resize(function () {
         windowWidth = $(window).width(); //retrieve current window width

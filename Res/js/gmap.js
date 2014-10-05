@@ -22,7 +22,7 @@ function initialize() {
 
 function success(position) {
 
-   var markericon = "Res/img/marker_3.png"; 
+   var markericon = "Res/img/marker_4.png"; 
    var mapCanvas = document.getElementById('gmap');
    myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   
